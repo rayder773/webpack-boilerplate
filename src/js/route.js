@@ -1,6 +1,6 @@
 'use stict';
 
-function Route(name, htmlName, defaultRoute) {
+export function Route(name, htmlName, defaultRoute) {
     try {
         if(!name || !htmlName) {
             throw 'error: name and htmlName params are mandatories';
@@ -21,6 +21,6 @@ Route.prototype = {
         this.default = defaultRoute;
     },
     isActiveRoute: function (hashedPath) {
-        return hashedPath.replace('#', '') === this.name; 
+        return hashedPath.replace('#', '') === this.name;
     }
 }
